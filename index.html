@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CEC — Class Education Consultancy | Nursing Admission Guidance, Changanassery</title>
+<meta name="description" content="Class Education Consultancy (CEC), Changanassery — trusted local guidance for B.Sc Nursing, M.Sc Nursing, GNM and study-abroad admissions in Kerala.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2447;
+    --blue:#2F6FED;
+    --paper:#F5F8FC;
+    --ink:#14213D;
+    --gold:#C89B3C;
+    --line:#DCE4F0;
+    --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    color:var(--navy);
+    font-weight:600;
+    line-height:1.15;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:.72rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--blue);
+    font-weight:500;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 26px;
+    border-radius:2px;
+    font-family:'Work Sans',sans-serif;
+    font-weight:600;
+    font-size:.95rem;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--navy);color:var(--white);}
+  .btn-primary:hover{box-shadow:0 10px 24px rgba(11,36,71,.28);}
+  .btn-ghost{background:transparent;color:var(--navy);border:1px solid var(--line);}
+  .btn-ghost:hover{border-color:var(--navy);}
+  .btn-gold{background:var(--gold);color:var(--navy);}
+  .btn-gold:hover{box-shadow:0 10px 24px rgba(200,155,60,.35);}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(245,248,252,.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 32px;max-width:1160px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand img{height:42px;width:42px;object-fit:contain;}
+  .brand-text{font-family:'Fraunces',serif;font-weight:700;color:var(--navy);font-size:1.05rem;line-height:1.1;}
+  .brand-text span{display:block;font-family:'IBM Plex Mono',monospace;font-size:.62rem;letter-spacing:.08em;color:var(--blue);font-weight:400;text-transform:uppercase;margin-top:2px;}
+  .nav-links{display:flex;gap:30px;align-items:center;}
+  .nav-links a{font-size:.9rem;font-weight:500;color:var(--ink);position:relative;padding:4px 0;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-cta{display:flex;align-items:center;gap:14px;}
+  .call-chip{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--navy);}
+  .menu-toggle{display:none;background:none;border:none;font-size:1.4rem;color:var(--navy);cursor:pointer;}
+
+  @media(max-width:860px){
+    .nav-links{
+      position:absolute;top:100%;left:0;right:0;
+      background:var(--white);
+      flex-direction:column;gap:0;
+      border-bottom:1px solid var(--line);
+      max-height:0;overflow:hidden;transition:max-height .3s ease;
+    }
+    .nav-links.open{max-height:400px;}
+    .nav-links a{width:100%;padding:14px 32px;border-bottom:1px solid var(--line);}
+    .menu-toggle{display:block;}
+    .call-chip{display:none;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;
+    padding:88px 0 60px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute;top:-120px;right:-160px;
+    width:520px;height:520px;
+    border-radius:50%;
+    background:radial-gradient(circle at 30% 30%, rgba(47,111,237,.14), rgba(47,111,237,0) 70%);
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center;
+    position:relative;z-index:2;
+  }
+  .hero h1{
+    font-size:clamp(2.3rem, 4vw, 3.4rem);
+    margin:18px 0 22px;
+    max-width:14ch;
+  }
+  .hero h1 .mark{
+    color:var(--blue);
+    position:relative;
+    white-space:nowrap;
+  }
+  .hero p.lead{
+    font-size:1.08rem;
+    color:#3C4A63;
+    max-width:46ch;
+    margin-bottom:32px;
+  }
+  .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:34px;}
+  .trust-row{display:flex;gap:28px;flex-wrap:wrap;}
+  .trust-item{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--navy);font-weight:500;}
+  .trust-item .dot{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+
+  /* pulse card */
+  .pulse-card{
+    background:var(--navy);
+    border-radius:6px;
+    padding:34px 30px 28px;
+    color:var(--white);
+    position:relative;
+    box-shadow:0 30px 60px -20px rgba(11,36,71,.45);
+  }
+  .pulse-card .eyebrow{color:#8FB3FF;}
+  .pulse-card h3{color:var(--white);font-size:1.35rem;margin:10px 0 6px;}
+  .pulse-card p{color:#B9C7E5;font-size:.9rem;margin-bottom:20px;}
+  .ecg-wrap{
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:4px;
+    padding:14px 10px 6px;
+    margin-bottom:18px;
+  }
+  .ecg-wrap svg{width:100%;height:64px;display:block;}
+  .ecg-path{
+    fill:none;
+    stroke:var(--gold);
+    stroke-width:2.4;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:600;
+    stroke-dashoffset:600;
+    animation:draw 3.2s ease-in-out infinite;
+  }
+  @keyframes draw{
+    0%{stroke-dashoffset:600;}
+    45%{stroke-dashoffset:0;}
+    70%{stroke-dashoffset:0;}
+    100%{stroke-dashoffset:-600;}
+  }
+  .pulse-list{display:flex;flex-direction:column;gap:10px;}
+  .pulse-list .row{
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:.86rem;
+    border-top:1px solid rgba(255,255,255,.1);
+    padding-top:10px;
+  }
+  .pulse-list .row:first-child{border-top:none;padding-top:0;}
+  .pulse-list .row b{color:var(--white);font-weight:600;}
+  .pulse-list .row span{color:#93A6CC;}
+
+  @media(max-width:860px){
+    .hero-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- section shells ---------- */
+  section{padding:84px 0;}
+  .section-head{max-width:640px;margin-bottom:48px;}
+  .section-head h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-top:12px;}
+  .section-head p{color:#3C4A63;margin-top:14px;font-size:1rem;}
+
+  .divider-ecg{width:100%;height:40px;margin:0 auto;max-width:1160px;padding:0 32px;opacity:.5;}
+  .divider-ecg svg{width:100%;height:100%;}
+  .divider-ecg path{fill:none;stroke:var(--line);stroke-width:1.5;}
+
+  /* ---------- priority zones ---------- */
+  .zones{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:22px;
+  }
+  .zone-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:28px 26px;
+    position:relative;
+    transition:box-shadow .2s ease, transform .2s ease;
+  }
+  .zone-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -22px rgba(11,36,71,.25);}
+  .zone-card.primary{
+    background:var(--navy);
+    border-color:var(--navy);
+  }
+  .zone-card.primary h3, .zone-card.primary .zone-tag{color:var(--white);}
+  .zone-card.primary p{color:#B9C7E5;}
+  .zone-card.primary ul li{color:#DCE6F9;}
+  .zone-card.primary ul li::before{background:var(--gold);}
+  .zone-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);font-weight:500;
+  }
+  .zone-card h3{font-size:1.25rem;margin:10px 0 10px;}
+  .zone-card p{font-size:.9rem;color:#3C4A63;margin-bottom:16px;}
+  .zone-card ul{list-style:none;}
+  .zone-card ul li{
+    font-size:.86rem;color:#2E3B54;padding-left:16px;position:relative;margin-bottom:8px;
+  }
+  .zone-card ul li::before{
+    content:"";position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--blue);
+  }
+  @media(max-width:900px){.zones{grid-template-columns:1fr;}}
+
+  /* ---------- courses ---------- */
+  .courses-band{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .course-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:6px;
+    overflow:hidden;
+  }
+  .course-cell{
+    background:var(--white);
+    padding:30px 26px;
+  }
+  .course-cell.featured{background:#EEF4FF;}
+  .course-cell .num{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--blue);}
+  .course-cell h4{font-size:1.08rem;margin:10px 0 8px;}
+  .course-cell p{font-size:.87rem;color:#3C4A63;}
+  @media(max-width:900px){.course-grid{grid-template-columns:1fr;}}
+
+  /* ---------- process ---------- */
+  .process-list{display:flex;flex-direction:column;}
+  .step{
+    display:grid;grid-template-columns:90px 1fr;gap:24px;
+    padding:26px 0;
+    border-top:1px solid var(--line);
+  }
+  .step:last-child{border-bottom:1px solid var(--line);}
+  .step .step-num{
+    font-family:'Fraunces',serif;font-size:2.1rem;color:var(--blue);font-weight:600;
+  }
+  .step h4{font-size:1.15rem;margin-bottom:6px;}
+  .step p{color:#3C4A63;font-size:.92rem;max-width:56ch;}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;}
+  .about-grid p{color:#3C4A63;margin-bottom:16px;}
+  .about-points{display:flex;flex-direction:column;gap:20px;}
+  .about-point{display:flex;gap:16px;}
+  .about-point .ai{
+    width:38px;height:38px;flex-shrink:0;border-radius:50%;
+    background:var(--navy);color:var(--white);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace;font-size:.75rem;
+  }
+  .about-point h4{font-size:1rem;margin-bottom:4px;}
+  .about-point p{font-size:.88rem;margin-bottom:0;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+
+  /* ---------- testimonials ---------- */
+  .testi-band{background:var(--navy);color:var(--white);}
+  .testi-band .section-head p{color:#B9C7E5;}
+  .testi-band .eyebrow{color:#8FB3FF;}
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:6px;
+    padding:26px 24px;
+  }
+  .testi-card p{font-size:.95rem;color:#DCE6F9;margin-bottom:18px;font-family:'Fraunces',serif;font-style:italic;line-height:1.5;}
+  .testi-card .who{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--gold);}
+  @media(max-width:900px){.testi-grid{grid-template-columns:1fr;}}
+
+  /* ---------- contact ---------- */
+  .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;}
+  .contact-info .info-row{
+    border-top:1px solid var(--line);
+    padding:18px 0;
+  }
+  .contact-info .info-row:last-child{border-bottom:1px solid var(--line);}
+  .contact-info .info-row .label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+  .contact-info .info-row .val{font-size:1rem;color:var(--navy);font-weight:500;}
+  .contact-info .info-row .val a{color:var(--navy);border-bottom:1px solid var(--gold);}
+  .form-card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:32px;
+  }
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field.full{grid-column:1/-1;}
+  .field label{font-family:'IBM Plex Mono',monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:#5A6B8C;}
+  .field input, .field select, .field textarea{
+    border:1px solid var(--line);
+    border-radius:3px;
+    padding:12px 14px;
+    font-family:'Work Sans',sans-serif;
+    font-size:.92rem;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus{
+    outline:2px solid var(--blue);outline-offset:1px;
+  }
+  @media(max-width:860px){.contact-grid{grid-template-columns:1fr;}.form-row{grid-template-columns:1fr;}}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--navy);color:#B9C7E5;padding:48px 0 26px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+  .foot-brand{display:flex;align-items:center;gap:12px;margin-bottom:14px;}
+  .foot-brand img{height:36px;width:36px;}
+  .foot-brand span{font-family:'Fraunces',serif;font-weight:700;color:var(--white);font-size:1rem;}
+  footer h5{color:var(--white);font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;font-family:'IBM Plex Mono',monospace;font-weight:500;margin-bottom:14px;}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  footer ul a{font-size:.88rem;color:#B9C7E5;}
+  footer ul a:hover{color:var(--white);}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem;color:#7C8FB8;}
+  @media(max-width:860px){.foot-grid{grid-template-columns:1fr;}}
+
+  ::selection{background:var(--gold);color:var(--navy);}
+  :focus-visible{outline:2px solid var(--blue);outline-offset:2px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important;transition:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <img src="assets/cec-logo.jpeg" alt="CEC — Class Education Consultancy logo">
+      <div class="brand-text">CEC<span>Class Education Consultancy</span></div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#nursing">Nursing Admission</a>
+      <a href="#zones">Where We Guide You</a>
+      <a href="#courses">Courses</a>
+      <a href="#process">How It Works</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <span class="call-chip">+91 97473 88047</span>
+      <a href="#contact" class="btn btn-primary" style="padding:10px 20px;">Book Counselling</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Perunna · Changanassery, Kerala</span>
+        <h1>Nursing admission guidance, done right, close to home.</h1>
+        <p class="lead">CEC helps students in and around Changanassery find the right <span style="color:var(--blue);font-weight:600;">B.Sc Nursing, M.Sc Nursing and GNM</span> seat in Kerala — and, for those ready to go further, a clear route to studying or working abroad.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Book a Free Counselling Session</a>
+          <a href="#nursing" class="btn btn-ghost">See Nursing Admission Guidance</a>
+        </div>
+        <div class="trust-row">
+          <div class="trust-item"><span class="dot"></span>5.0-rated on Google by local families</div>
+          <div class="trust-item"><span class="dot"></span>Based in Perunna, Changanassery</div>
+          <div class="trust-item"><span class="dot"></span>Nursing &amp; study-abroad specialists</div>
+        </div>
+      </div>
+
+      <div class="pulse-card">
+        <span class="eyebrow">This week at CEC</span>
+        <h3>Nursing Admission Vitals</h3>
+        <p>A quick read on what's moving right now for nursing aspirants in Kerala.</p>
+        <div class="ecg-wrap">
+          <svg viewBox="0 0 300 64" preserveAspectRatio="none">
+            <path class="ecg-path" d="M0,32 L40,32 L52,32 L60,10 L70,54 L80,18 L90,32 L120,32 L132,32 L140,14 L150,50 L160,20 L170,32 L300,32"/>
+          </svg>
+        </div>
+        <div class="pulse-list">
+          <div class="row"><b>B.Sc Nursing</b><span>Applications open</span></div>
+          <div class="row"><b>GNM &amp; Post-Basic</b><span>Seats being mapped</span></div>
+          <div class="row"><b>OET / IELTS</b><span>New batch forming</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-ecg" aria-hidden="true">
+    <svg viewBox="0 0 1160 40" preserveAspectRatio="none">
+      <path d="M0,20 L500,20 L512,20 L520,4 L530,36 L540,10 L550,20 L1160,20"/>
+    </svg>
+  </div>
+
+  <!-- NURSING FOCUS / ZONES -->
+  <section id="zones">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Where we guide you</span>
+        <h2>Kerala first. Then wherever the right seat is.</h2>
+        <p>Our home ground is nursing admission in Kerala — that's where our relationships run deepest. When it makes sense, we help students look further, in the same order they'd naturally consider it.</p>
+      </div>
+      <div class="zones" id="nursing">
+        <div class="zone-card primary">
+          <span class="zone-tag">Primary focus</span>
+          <h3>Nursing in Kerala</h3>
+          <p>Our core practice. We work directly with nursing colleges across Kerala to guide students from application to admission letter.</p>
+          <ul>
+            <li>B.Sc Nursing</li>
+            <li>M.Sc Nursing</li>
+            <li>GNM &amp; Post-Basic B.Sc</li>
+            <li>Entrance &amp; document guidance</li>
+          </ul>
+        </div>
+        <div class="zone-card">
+          <span class="zone-tag">Second priority</span>
+          <h3>Nursing &amp; Career Abroad</h3>
+          <p>For students and working nurses ready for an international placement, once the Kerala route has been mapped first.</p>
+          <ul>
+            <li>OET / IELTS preparation</li>
+            <li>Documentation &amp; attestation</li>
+            <li>Visa guidance</li>
+          </ul>
+        </div>
+        <div class="zone-card">
+          <span class="zone-tag">Also guided</span>
+          <h3>Other Career Paths</h3>
+          <p>Beyond nursing, we offer general education and career counselling for students weighing other course options.</p>
+          <ul>
+            <li>Course &amp; college selection</li>
+            <li>Admission process support</li>
+            <li>General career guidance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="courses-band" id="courses">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What we guide on</span>
+        <h2>Nursing is our specialty. It isn't the only thing we help with.</h2>
+        <p>Every course below is guided the same way — a real conversation first, then a shortlist built around your marks, budget and goals.</p>
+      </div>
+      <div class="course-grid">
+        <div class="course-cell featured">
+          <span class="num">01</span>
+          <h4>B.Sc Nursing</h4>
+          <p>Our most-requested guidance — college shortlisting, entrance prep support and application follow-through across Kerala.</p>
+        </div>
+        <div class="course-cell featured">
+          <span class="num">02</span>
+          <h4>M.Sc &amp; Post-Basic Nursing</h4>
+          <p>For working nurses and graduates looking to specialise or progress into a higher nursing qualification.</p>
+        </div>
+        <div class="course-cell featured">
+          <span class="num">03</span>
+          <h4>GNM</h4>
+          <p>A shorter route into nursing practice, guided end-to-end from college shortlist to admission.</p>
+        </div>
+        <div class="course-cell">
+          <span class="num">04</span>
+          <h4>Study &amp; Work Abroad</h4>
+          <p>Country selection, OET/IELTS preparation and visa documentation for students and nurses heading overseas.</p>
+        </div>
+        <div class="course-cell">
+          <span class="num">05</span>
+          <h4>General Career Counselling</h4>
+          <p>One-on-one sessions for students still deciding on a course or college, nursing or otherwise.</p>
+        </div>
+        <div class="course-cell">
+          <span class="num">06</span>
+          <h4>Admission Support</h4>
+          <p>Help with forms, certificates and documentation, so nothing is delayed or rejected on a technicality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider-ecg" aria-hidden="true">
+    <svg viewBox="0 0 1160 40" preserveAspectRatio="none">
+      <path d="M0,20 L500,20 L512,20 L520,4 L530,36 L540,10 L550,20 L1160,20"/>
+    </svg>
+  </div>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">How it works</span>
+        <h2>One visit to our Perunna office. A plan you can follow.</h2>
+      </div>
+      <div class="process-list">
+        <div class="step">
+          <div class="step-num">01</div>
+          <div>
+            <h4>Counselling Session</h4>
+            <p>We start by understanding your marks, budget and what you actually want from nursing or another course — in person or over a call.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">02</div>
+          <div>
+            <h4>College Shortlisting</h4>
+            <p>You get a realistic shortlist of nursing colleges in Kerala, ranked by fit — not by which one pays the highest commission.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">03</div>
+          <div>
+            <h4>Application &amp; Documentation</h4>
+            <p>We help prepare and check every form and certificate so your application isn't delayed over paperwork.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">04</div>
+          <div>
+            <h4>Admission &amp; Beyond</h4>
+            <p>Once you're admitted, we stay reachable — and for students heading abroad, we continue through visa and pre-departure guidance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">About CEC</span>
+        <h2 style="margin-top:12px;">A local consultancy, built around the student.</h2>
+        <p>CEC — Class Education Consultancy — works out of Perunna, Changanassery, guiding students through one of the most confusing parts of a nursing career: getting admitted in the first place.</p>
+        <p>We keep our focus narrow on purpose. Nursing admission in Kerala is what we know best, and it's where families in and around Changanassery come to us first — with study-abroad and general course guidance offered alongside it.</p>
+      </div>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="ai">01</div>
+          <div><h4>Local, reachable guidance</h4><p>Our office is in Perunna, Changanassery — a real place you can walk into, not just a phone number.</p></div>
+        </div>
+        <div class="about-point">
+          <div class="ai">02</div>
+          <div><h4>Nursing-first expertise</h4><p>We concentrate on nursing admissions, so our advice is specific rather than generic.</p></div>
+        </div>
+        <div class="about-point">
+          <div class="ai">03</div>
+          <div><h4>Support beyond the offer letter</h4><p>From documentation to, where relevant, visa steps — we stay involved after admission.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testi-band">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">What families say</span>
+        <h2>Decisions made with a little more confidence.</h2>
+      </div>
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p>"We walked in only knowing we wanted a nursing seat somewhere in Kerala. We walked out with an actual shortlist and a plan for the entrance exam."</p>
+          <div class="who">Parent of a B.Sc Nursing aspirant, Changanassery</div>
+        </div>
+        <div class="testi-card">
+          <p>"They explained why a particular college suited my daughter better, even though it wasn't the one we'd first asked about. That honesty stood out."</p>
+          <div class="who">Parent, Kottayam district</div>
+        </div>
+        <div class="testi-card">
+          <p>"The OET guidance made the abroad process feel manageable instead of overwhelming. I still reach out with questions when I need to."</p>
+          <div class="who">Nursing graduate, Changanassery</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap contact-grid">
+      <div class="contact-info">
+        <span class="eyebrow">Start here</span>
+        <h2 style="margin-top:12px;margin-bottom:24px;">Come in, call, or send a message.</h2>
+        <div class="info-row">
+          <div class="label">Visit Us</div>
+          <div class="val">1st Floor, Stop N Shop Supermarket, Perunna, Changanassery, Kerala 686102</div>
+        </div>
+        <div class="info-row">
+          <div class="label">Call Us</div>
+          <div class="val"><a href="tel:+919747388047">+91 97473 88047</a> &nbsp;·&nbsp; <a href="tel:+919562319808">+91 95623 19808</a></div>
+        </div>
+        <div class="info-row">
+          <div class="label">Instagram</div>
+          <div class="val"><a href="https://www.instagram.com/classeducation_" target="_blank" rel="noopener">@classeducation_</a></div>
+        </div>
+        <div class="info-row">
+          <div class="label">Hours</div>
+          <div class="val">Open daily, mornings through evening — call ahead to confirm timing</div>
+        </div>
+        <a href="https://wa.me/919747388047" target="_blank" rel="noopener" class="btn btn-gold" style="margin-top:24px;">Message on WhatsApp</a>
+      </div>
+
+      <form class="form-card" onsubmit="event.preventDefault(); window.open('https://wa.me/919747388047?text=' + encodeURIComponent('Hi CEC, my name is ' + document.getElementById('cname').value + '. I would like counselling for: ' + document.getElementById('cinterest').value + '. ' + document.getElementById('cmsg').value), '_blank');">
+        <div class="form-row">
+          <div class="field full">
+            <label for="cname">Full Name</label>
+            <input type="text" id="cname" required placeholder="Your name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cphone">Phone Number</label>
+            <input type="tel" id="cphone" required placeholder="+91">
+          </div>
+          <div class="field">
+            <label for="cinterest">Interested In</label>
+            <select id="cinterest">
+              <option>B.Sc Nursing Admission</option>
+              <option>M.Sc / Post-Basic Nursing</option>
+              <option>GNM</option>
+              <option>Study / Work Abroad</option>
+              <option>General Career Guidance</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field full">
+            <label for="cmsg">Message (optional)</label>
+            <textarea id="cmsg" rows="3" placeholder="Tell us a little about your marks, budget or timeline"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Send via WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <img src="assets/cec-logo.jpeg" alt="CEC logo">
+          <span>Class Education Consultancy</span>
+        </div>
+        <p style="font-size:.88rem;max-width:34ch;">Nursing admission guidance in Changanassery, Kerala — with a clear path abroad for those who want it.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#nursing">Nursing Admission</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#process">How It Works</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>CEC</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://www.instagram.com/classeducation_" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 CEC — Class Education Consultancy. Perunna, Changanassery, Kerala.</span>
+      <span>Built for families choosing nursing admission in Kerala.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navLinks = document.getElementById('navLinks');
+  menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
+</body>
+</html>
